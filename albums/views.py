@@ -40,4 +40,4 @@ class AlbumView(ListCreateAPIView):
     serializer_class = AlbumSerializer
     
     def perform_create(self, serializer):
-        return serializer.save(user=self.kwargs.get("user"))
+        return serializer.save(user=self.request.user)
